@@ -1,0 +1,101 @@
+
+  <title>Assignment 5 - Three.JS FPS Office - Alexander Bateman</title>
+
+<!doctype html>
+<html lang="en">
+  <head>
+      <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.183.2/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.183.2/examples/jsm/"
+        }
+      }
+      </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Three.js FPS Office</title>
+    <style>
+      html, body { margin: 0; height: 100%; overflow: hidden; background: #000; }
+      #hud {
+        position: fixed;
+        top: 12px; left: 12px;
+        color: white; font-family: system-ui, -apple-system, Arial, sans-serif;
+        background: rgba(0,0,0,0.35);
+        padding: 10px 12px;
+        border-radius: 10px;
+        user-select: none;
+      }
+      #crosshair {
+        position: fixed;
+        left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px; height: 10px;
+        border: 2px solid rgba(255,255,255,0.8);
+        border-radius: 50%;
+        pointer-events: none;
+      }
+      #blocker {
+        position: fixed; inset: 0;
+        display: grid; place-items: center;
+        background: rgba(0,0,0,0.65);
+        color: white;
+        font-family: system-ui, -apple-system, Arial, sans-serif;
+      }
+      #blocker button {
+        font-size: 16px;
+        padding: 10px 14px;
+        border-radius: 10px;
+        border: 0;
+        cursor: pointer;
+      }
+      .small { opacity: 0.8; margin-top: 8px; font-size: 13px; }
+    </style>
+  </head>
+  <body>
+<div id="hud">
+  <div><b>Gems:</b> <span id="gemCount">0</span> / <span id="gemTotal">5</span></div>
+  <div id="gemMessage" style="color:#ffcc00;"></div>
+  <div class="small"><b>WASD</b> to move</div>
+  <div class="small"><b>Space</b> to jump</div>
+  <div class="small"><b>Mouse</b> to look around</div>
+  <div class="small"><b>Shift</b> to sprint</div>
+  <div class="small"><b>C</b> to crouch</div>
+  <div class="small"><b>F</b> toggle flashlight</div>
+  <div class="small"><b>L</b> toggle desk lamp</div>
+
+</div>
+    <div id="crosshair"></div>
+
+    <div id="blocker">
+      <div style="text-align:center; max-width:520px;">
+        <h2 style="margin:0 0 10px 0;">Click to Play (Pointer Lock)</h2>
+        <button id="startBtn">Start</button>
+        <div class="small">
+          If your mouse disappears, that’s normal (pointer lock). Press Esc to unlock.
+        </div>
+      </div>
+    </div>
+
+
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
+
+
+
+<!--   <script src="lib/webgl-utils.js"></script>
+  <script src="lib/webgl-debug.js"></script>
+  <script src="lib/cuon-utils.js"></script>
+  <script src="lib/cuon-matrix-cse160.js"></script>
+  <script src="src/Camera.js"></script>
+  <script src="src/Triangle.js"></script>
+  <script src="src/Sphere.js"></script>
+  <script src="src/Model.js"></script>
+  <script src="src/Circle.js"></script>
+  <script src="src/Cylinder.js"></script>
+  <script src="src/Cube.js"></script>
+  <script src="src/World.js"></script>
+  -->
