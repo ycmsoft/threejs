@@ -37,7 +37,7 @@ Collect all gems to get super jump, where you can then jump on top of mug, to ju
 - `Mouse` - Look around (pointer lock).
 - `Space` - Jump.
 - `Shift` - Sprint.
-- `C` or `Ctrl` - Crouch.
+- `C` - Crouch.
 - `F` - Toggle flashlight.
 - `L` - Toggle desk lamp.
 - `Esc` - Unlock pointer.
