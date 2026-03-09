@@ -177,10 +177,13 @@ const audioLoader = new THREE.AudioLoader();
 const sfxJump = new THREE.Audio(listener);
 const sfxLight = new THREE.Audio(listener);
 const sfxPickup = new THREE.Audio(listener);
+const sfxTeleport = new THREE.Audio(listener);
 
 audioLoader.load('./sounds/impactMetal_000.ogg', (buf) => { sfxJump.setBuffer(buf);   sfxJump.setVolume(0.35); });
 audioLoader.load('./sounds/switch_002.ogg',      (buf) => { sfxLight.setBuffer(buf);  sfxLight.setVolume(0.35); });
 audioLoader.load('./sounds/forceField_000.ogg',  (buf) => { sfxPickup.setBuffer(buf); sfxPickup.setVolume(0.45); });
+audioLoader.load('./sounds/sfx_shieldUp.ogg',  (buf) => { sfxTeleport.setBuffer(buf); sfxTeleport.setVolume(0.45); });
+
 
 function playSFX(sfx) {
   if (!sfx.buffer) return;   
@@ -892,8 +895,8 @@ objects.push(boxSpinner);
 rebuildStaticColliders();
 
 
-bigSpinner.rotation.z = THREE.MathUtils.degToRad(23.4);
-spinner.rotation.z = THREE.MathUtils.degToRad(23.4);
+bigSpinner.rotation.z = THREE.MathUtils.degToRad(-23.4);
+spinner.rotation.z = THREE.MathUtils.degToRad(-23.4);
 
 function makeCheckerTexture({
   squares = 10,    
@@ -1117,7 +1120,7 @@ function movePlayer(dt) {
   const obj = getPlayer();
 
 
-const wantsCrouch = keys['control'] || keys['c'];
+const wantsCrouch = keys['c'];
 const targetH = wantsCrouch ? CROUCH_HEIGHT : STAND_HEIGHT;
 playerHeight += (targetH - playerHeight) * Math.min(1, CROUCH_LERP * dt);
 
@@ -1222,8 +1225,9 @@ if (controls.isLocked && tardisCooldown === 0) {
   const dx = p.x - tardisPos.x;
   const dz = p.z - tardisPos.z;
 
-  if ((dx * dx + dz * dz) < (tardisRadius * tardisRadius)) {
+if ((dx * dx + dz * dz) < (tardisRadius * tardisRadius) && p.y < tardisPos.y + 5) {
     tardisCooldown = 1.0; 
+    playSFX(sfxTeleport);
     teleportToSpawn();
   }
 }

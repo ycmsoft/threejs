@@ -7,7 +7,7 @@ Live Demo: https://ycmsoft.github.io/threejs/index.html
 ## Description:
 A first person exploration game set on a giant desk, inspired by "Runtfest" (Quake 3 map by Xzed released April 13, 2000). You explore a massive desk environment with a miniature office on top, collect gems to unlock super jump, and toggle lights.
 
-Collect all gems to get super jump, where you can then jump on top of mug, to jump on top of the globe, to jump ontop of the lamp, to get on top of the monitor and computer where you'll find a hidden teapot. 
+Collect all gems to get super jump, where you can then jump on top of mug, to jump on top of the globe, to jump ontop of the lamp, to get on top of the monitor and computer where you'll find a hidden teapot. If you fall off the desk, there is a blue police box that will teleport you back ontop of the desk when you walk up to it. 
 
 
 ## Files:
@@ -28,6 +28,7 @@ Collect all gems to get super jump, where you can then jump on top of mug, to ju
 - `sounds/impactMetal_000.ogg` - Jump sound (kenney.nl).
 - `sounds/switch_002.ogg` - Light toggle sound (kenney.nl).
 - `sounds/forceField_000.ogg` - Gem pickup sound (kenney.nl).
+- `sounds/sfx_shieldUp.ogg` - Police box teleport sound (kenney.nl).
 - `skybox/` - 6-face cubemap skybox (px, nx, py, ny, pz, nz).
 - `README.md` - This readme.
 
@@ -67,7 +68,7 @@ Collect all gems to get super jump, where you can then jump on top of mug, to ju
 - Three.js documentation and tutorials (threejs.org).
 - Poly Pizza (poly.pizza) for free 3D models.
 - Poly Haven (polyhaven.com) for PBR textures.
-- kenney.nl for sound effects (sci-fi pack and impact sounds pack)
+- kenney.nl for sound effects (sci-fi pack, impact sounds pack, and space shooter redux pack)
 - Wood floor by Dimitrios Savva (https://polyhaven.com/a/wood_floor)
 - Wood table by Dimitrios Savva (https://polyhaven.com/a/wood_table)
 - Ceiling interior by Dimitrios Savva (https://polyhaven.com/a/ceiling_interior)
